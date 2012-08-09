@@ -1,13 +1,13 @@
-﻿<?php
+<?php
 /* ----------------------------------------------------------------------
- * default/views/mailTemplates/instructions.tpl
+ * default/views/mailTemplates/instructions_html.tpl
  * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------
  *
  * Software by Whirl-i-Gig (http://www.whirl-i-gig.com)
- * Copyright 2009-2010 Whirl-i-Gig
+ * Copyright 2009-2011 Whirl-i-Gig
  *
  * For more information visit http://www.CollectiveAccess.org
  *
@@ -25,24 +25,21 @@
  *
  * ----------------------------------------------------------------------
  */
-?>
 
-Um Ihr Passwort neu zu erstellen, kopieren Sie bitte die folgende URL in die Adresszeile Ihres Browsers:
-<?php print $vs_password_reset_url; ?>
-Sollten Sie kein neues Passwort angefordert haben, kontaktieren Sie uns bitte unter tabu@deutsche-kinemathek.de
+print "<p>Um Ihr Passwort neu zu erstellen, kopieren Sie bitte die folgende URL in die Adresszeile Ihres Browsers:</p>";
+print "<p>".$vs_password_reset_url."</p>";
+print "<p>Sollten Sie kein neues Passwort angefordert haben, kontaktieren Sie uns bitte unter tabu@deutsche-kinemathek.de</p>"
+print "<br />";
+print "<p>Mit freundlichen Grüßen<br/>das Projektteam</p>";
 
-Mit freundlichen Grüßen
-das Projektteam
+print "<p>http://tabu.deutsche-kinemathek.de</p>";
 
-http://tabu.deutsche-kinemathek.de;
+print "<p>==========================</p>";
 
-==========================
-
-To reset your password, copy and paste the following URL into your web browser:
-<?php print $vs_password_reset_url; ?>
-If you did not request your password to be reset, please contact us at tabu@deutsche-kinemathek.de.
-
-Regards,
-The TABU staff;
-
-http://tabu.deutsche-kinemathek.de;
+print "<p>To reset your password, copy and paste the following URL into your web browser:
+print "<p>".$vs_password_reset_url."</p>";
+print "<p>If you did not request your password to be reset, please contact us at tabu@deutsche-kinemathek.de.
+print "<br />";
+print "<p>Regards,<br/>The TABU staff</p>";
+print "<br />";
+print "<p>http://tabu.deutsche-kinemathek.de</p>";

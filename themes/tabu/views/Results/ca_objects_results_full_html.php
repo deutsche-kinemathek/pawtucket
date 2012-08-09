@@ -72,23 +72,23 @@ if($vo_result) {
 		</tr>
 		<tr>
 			<th class="borderDash"><!-- empty --></th>
-			<th><img src="<?php print $this->request->getThemeUrlPath(); ?>/graphics/order_results.gif" border="0"><?php print _t("Nr."); ?></th>
+			<th><img src="<?php print $this->request->getThemeUrlPath(); ?>/graphics/order_results.gif" border="0"><?php print _t("No."); ?></th>
 			<th class="borderDash"><!-- empty --></th>
-			<th style="width:75px;"><img src="<?php print $this->request->getThemeUrlPath(); ?>/graphics/order_results.gif" border="0"><?php print _t("Merken"); ?></th>
+			<th style="width:75px;"><img src="<?php print $this->request->getThemeUrlPath(); ?>/graphics/order_results.gif" border="0"><?php print _t("Bookmark"); ?></th>
 			<th class="borderDash"><!-- empty --></th>
-			<th><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Typ"), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.type_id' )); ?></th>
+			<th><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Type"), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.type_id' )); ?></th>
 			<th class="borderDash"><!-- empty --></th>
-			<th><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Datensatz-Nr."), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.idno_sort' )); ?></th>
+			<th><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Data Record No."), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.idno_sort' )); ?></th>
 			<th class="borderDash"><!-- empty --></th>
-			<th><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Einstellungs-Nr."), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.einstellungs_nr' )); ?></th>
+			<th><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Take No."), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.einst_nr_sort' )); ?></th>
 			<th class="borderDash"><!-- empty --></th>
-			<th><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Datum"), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.date_translated' )); ?></th>
+			<th><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Date"), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.date_translated' )); ?></th>
 			<th class="borderDash"><!-- empty --></th>
-			<th><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Drehort"), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.location' )); ?></th>
+			<th><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Film Location"), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.location' )); ?></th>
 			<th class="borderDash"><!-- empty --></th>
-			<th style="width:75px;"><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Kameramann"), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.cameraman' )); ?></th>
+			<th style="width:75px;"><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Cinematographer"), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.cameraman' )); ?></th>
 			<th class="borderDash"><!-- empty --></th>
-			<th style="width:65px;"><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Personen"), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.people' )); ?></th>
+			<th style="width:65px;"><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath().'/graphics/order_results.gif" border="0">'._t("Person"), '', '', $vs_find_controller, 'Index', array("sort" => 'ca_objects.people' )); ?></th>
 			<th class="borderDash"><!-- empty --></th>
 			<th style="width:10px;"></th>
 			<th class="borderDash"><!-- empty --></th>
@@ -119,10 +119,10 @@ if($vo_result) {
 				if(in_array($vn_object_id, $va_set_items)){
 					print "<img src='".$this->request->getThemeUrlPath()."/graphics/box_on_red.gif' border='0'>";
 				}else{
-					print caNavLink($this->request, "<img src='".$this->request->getThemeUrlPath()."/graphics/box_off.gif' border='0'>", '', '', 'Sets', 'addItem', array('object_id' => $vn_object_id));
+					print caNavLink($this->request, "<img src='".$this->request->getThemeUrlPath()."/graphics/box_off.gif' border='0'>", '', '', 'Sets', 'addItem', array('object_id' => $vn_object_id), array("target" => "_blank"));
 				}
 			}else{
-				print caNavLink($this->request, _t("Anmelden um Lesezeichen zu setzen"), '', '', 'LoginReg', 'form');
+				print caNavLink($this->request, _t("Log in to save bookmark"), '', '', 'LoginReg', 'form');
 			}
 ?>
 			</td>

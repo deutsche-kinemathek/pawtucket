@@ -29,17 +29,18 @@
 	$vo_result 				= $this->getVar('result');
 	$vo_result_context 		= $this->getVar('result_context');
 	$vs_search = $vo_result_context->getSearchExpression();
+if (!$this->request->isAjax()) {
 ?>
  		<div id="breadcrumbTrail">
 <?php
-		print caNavLink($this->request, "&gt; "._t("Erweiterte Suche"), '', '', 'AdvancedSearch', 'Index');
+		print caNavLink($this->request, "&gt; "._t("Advanced Search"), '', '', 'AdvancedSearch', 'Index');
 		if($vo_result) {
-			print caNavLink($this->request, "&gt; "._t("Ergebnisliste"), '', '', 'AdvancedSearch', 'Index');
+			print caNavLink($this->request, "&gt; "._t("List of Results"), '', '', 'AdvancedSearch', 'Index');
 		}
 ?>
 		</div><!-- end breadcrumbTrail -->
+		
 <?php
-if (!$this->request->isAjax()) {
 	print $this->render('Search/search_advanced_controls_html.php');
 }
  ?>
@@ -47,7 +48,7 @@ if (!$this->request->isAjax()) {
 <?php
 	if($vo_result) {
 ?>
-		<h1><?php print ("Ergebnisliste"); ?></h1>
+		<h1><?php print _t("List of Results"); ?></h1>
 <?php
 		print $this->render('Results/paging_controls_html.php');
 ?>

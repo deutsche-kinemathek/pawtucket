@@ -26,14 +26,20 @@
  * ----------------------------------------------------------------------
  */
  
-print _t("Thank you for registering for \"%1\".
+?>
 
-As a member you can rank, comment and tag items on the site.  You can also create your own sets from the collection and share your slide-shows with friends and colleagues.
+Danke für Ihre Registrierung bei „Zur Entstehung von F. W. Murnaus TABU – Edition der Outtakes“. Damit können Sie beim Durchsuchen der Quellen auch die Merkliste nutzen.
+
+Mit freundlichen Grüßen
+das Projektteam
+
+http://tabu.deutsche-kinemathek.de
+
+===========================================
+
+Thank you for registering for “The Creation of F. W. Murnau’s TABU – The Outtakes’ Edition.” You will now be able to select and bookmark your results on a reference list.
 
 Regards,
-the Staff
+The TABU staff
 
-", $this->request->config->get("app_display_name"));
-
-	print $this->request->config->get("site_host");
-?>
+http://tabu.deutsche-kinemathek.de

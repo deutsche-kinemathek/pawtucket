@@ -26,16 +26,20 @@
  * ----------------------------------------------------------------------
  */
  
-print _t("Your %1 password was reset on %2 at %3. If you did 
-not reset your password, please contact us at %4.
+?>
 
+Ihr Passwort für  „Zur Entstehung von F. W. Murnaus TABU – Edition der Outtakes“ wurde am 00.00.0000 um 00:00 neu erstellt. Sollten Sie das Password nicht erneuert haben, kontaktieren Sie uns bitte unter tabu@deutsche-kinemathek.de
+
+Mit freundlichen Grüßen
+das Projektteam
+
+http://tabu.deutsche-kinemathek.de
+
+﻿====================================================
+
+Your password for “The Creation of F. W. Murnau’s TABU – The Outtakes’ Edition” was reset on June 1, 2012 at 15:02. If you did not reset your password, please contact us at tabu@deutsche-kinemathek.de
 
 Regards,
+The TABU staff
 
-The staff
-
-", $this->request->config->get("app_display_name"), date("F j, Y"), date("G:i"), $this->request->config->get("ca_admin_email"));
-
-
-	print $this->request->config->get("site_host");
-?>
+http://tabu.deutsche-kinemathek.de

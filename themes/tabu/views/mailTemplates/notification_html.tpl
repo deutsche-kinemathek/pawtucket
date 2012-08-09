@@ -1,13 +1,13 @@
-﻿<?php
+<?php
 /* ----------------------------------------------------------------------
- * default/views/mailTemplates/instructions.tpl
+ * default/views/mailTemplates/notification_html.tpl
  * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
  * ----------------------------------------------------------------------
  *
  * Software by Whirl-i-Gig (http://www.whirl-i-gig.com)
- * Copyright 2009-2010 Whirl-i-Gig
+ * Copyright 2009-2011 Whirl-i-Gig
  *
  * For more information visit http://www.CollectiveAccess.org
  *
@@ -27,22 +27,20 @@
  */
 ?>
 
-Um Ihr Passwort neu zu erstellen, kopieren Sie bitte die folgende URL in die Adresszeile Ihres Browsers:
-<?php print $vs_password_reset_url; ?>
-Sollten Sie kein neues Passwort angefordert haben, kontaktieren Sie uns bitte unter tabu@deutsche-kinemathek.de
+<p>Ihr Passwort für  „Zur Entstehung von F. W. Murnaus TABU – Edition der Outtakes“ wurde am 00.00.0000 um 00:00 neu erstellt. Sollten Sie das Password nicht erneuert haben, kontaktieren Sie uns bitte unter tabu@deutsche-kinemathek.de</p>
 
-Mit freundlichen Grüßen
-das Projektteam
+<p>Mit freundlichen Grüßen<br />
+das Projektteam</p>
 
-http://tabu.deutsche-kinemathek.de;
+<p>http://tabu.deutsche-kinemathek.de</p>
 
-==========================
 
-To reset your password, copy and paste the following URL into your web browser:
-<?php print $vs_password_reset_url; ?>
-If you did not request your password to be reset, please contact us at tabu@deutsche-kinemathek.de.
+<p>==============================================</p>
 
-Regards,
-The TABU staff;
+﻿
+<p>Your password for “The Creation of F. W. Murnau’s TABU – The Outtakes’ Edition” was reset on June 1, 2012 at 15:02. If you did not reset your password, please contact us at tabu@deutsche-kinemathek.de</p>
 
-http://tabu.deutsche-kinemathek.de;
+</p>Regards,<br />
+The TABU staff</p>
+
+<p>http://tabu.deutsche-kinemathek.de</p>

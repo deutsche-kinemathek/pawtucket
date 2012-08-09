@@ -41,10 +41,10 @@
 ?>
  		<div id="breadcrumbTrail">
 <?php
-		print caNavLink($this->request, "&gt; "._t("Merkliste"), '', '', 'Sets', 'Index');
+		print caNavLink($this->request, "&gt; "._t("Reference List"), '', '', 'Sets', 'Index');
 ?>
 		</div><!-- end breadcrumbTrail -->
-<h1><?php print _t("Merkliste"); ?></h1>
+<h1><?php print _t("Reference List"); ?></h1>
 <div id="setItemEditor">
 <?php
 		if (!sizeof($va_sets)) {
@@ -97,23 +97,23 @@
 			</tr>
 			<tr>
 				<th class="borderDash"><!-- empty --></th>
-				<th><?php print _t("Nr."); ?></th>
+				<th><?php print _t("No."); ?></th>
 				<th class="borderDash"><!-- empty --></th>
-				<th><?php print _t("Gemerkt"); ?></th>
+				<th><?php print _t("Bookmarked"); ?></th>
 				<th class="borderDash"><!-- empty --></th>
-				<th><?php print _t("Typ"); ?></th>
+				<th><?php print _t("Type"); ?></th>
 				<th class="borderDash"><!-- empty --></th>
-				<th><?php print _t("Datensatz-Nr."); ?></th>
+				<th><?php print _t("Data Record No."); ?></th>
 				<th class="borderDash"><!-- empty --></th>
-				<th><?php print _t("Einstellungs-Nr."); ?></th>
+				<th><?php print _t("Take No."); ?></th>
 				<th class="borderDash"><!-- empty --></th>
-				<th><?php print _t("Datum"); ?></th>
+				<th><?php print _t("Date"); ?></th>
 				<th class="borderDash"><!-- empty --></th>
-				<th><?php print _t("Drehort"); ?></th>
+				<th><?php print _t("Film Location"); ?></th>
 				<th class="borderDash"><!-- empty --></th>
-				<th><?php print _t("Kameramann"); ?></th>
+				<th><?php print _t("Cinematographer"); ?></th>
 				<th class="borderDash"><!-- empty --></th>
-				<th><?php print _t("Personen"); ?></th>
+				<th><?php print _t("Person"); ?></th>
 				<th class="borderDash"><!-- empty --></th>
 				<th></th>
 				<th class="borderDash"><!-- empty --></th>

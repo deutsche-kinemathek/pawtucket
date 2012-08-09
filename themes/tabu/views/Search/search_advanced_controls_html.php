@@ -26,6 +26,8 @@
  * ----------------------------------------------------------------------
  */
  
+ //JavascriptLoadManager::register('datePickerUI');
+ 				
  $t_subject 				= $this->getVar('t_subject');
  $o_result_context 	= $this->getVar('result_context');
  
@@ -33,8 +35,9 @@
  // Set options for all form element here
  //
  $va_bundle_opts = array(
- 	'width' => 30, 'height' => 1, 
- 	'values' => $o_result_context->getParameter('form_data')	// saved form data to pre-fill fields with
+ 	'width' => 50, 'height' => 1, 
+ 	'values' => $o_result_context->getParameter('form_data'),	// saved form data to pre-fill fields with
+ 	'usewysiwygeditor' => false
  );
  
  $va_type_ids = array(
@@ -48,27 +51,24 @@
  //
  $va_form_fields = array(
  	'ca_objects.einstellungs_nr' => array(
- 		'label' => _t("Einstellungs-Nr.")
+ 		'label' => _t("Take No.")
  	),
- 	'ca_objects.date_translated' => array(
- 		'label' => _t("Datum")
+	'ca_objects.cameraman' => array(
+ 		'label' => _t("Cinematographer")
  	),
- 	'ca_objects.location' => array(
- 		'label' => _t("Drehort")
- 	),
- 	'ca_objects.cameraman' => array(
- 		'label' => _t("Kameramann")
- 	),
- 	'ca_objects.people' => array(
+	'ca_entity_labels.displayname' => array(
  		'label' => _t("Person")
  	),
- 	'keywords' => array(
- 		'label' => _t("Stichwort")
+ 	'ca_objects.date_translated' => array(
+ 		'label' => _t("Date")
+ 	),
+ 	'ca_objects.location' => array(
+ 		'label' => _t("Film Location")
  	),
  );
  
 ?>
-<H1><?php print _t("Erweiterte Suche"); ?></H1>
+<H1><?php print _t("Advanced Search"); ?></H1>
 <div id="advancedSearch">
 <?php  print caFormTag($this->request, 'Index', 'caAdvancedSearch',  null, 'get', 'multipart/form-data', '_top', array('disableUnsavedChangesWarning' => true)); ?>
 	<table class="typeList" border="0">
@@ -78,18 +78,18 @@
 		</tr>
 		<tr>
 			<td valign="bottom" style="text-align:left; padding: 10px 0px 0px;"><a href="#" class="type_con"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/type_continuity_search.gif' border='0'  class="tabu_search"></a></td>
-			<td valign="bottom" style="text-align:left; padding: 0px 0px 4px; width:200px;"><a href="#" class="type_con"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/box_off_white.gif' border='0'  class="tabu_box"></a> <?php print _t("Drehbuch"); ?></div>
+			<td valign="bottom" style="text-align:left; padding: 0px 0px 4px; width:200px;"><a href="#" class="type_con"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/box_off_white.gif' border='0'  class="tabu_box"></a> <?php print _t("Current continuity"); ?></div>
 		</tr>
 		<tr>
 			<td valign="bottom" style="text-align:left; padding: 10px 0px 0px;"><a href="#" class="type_scr"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/type_script_search.gif' border='0'  class="tabu_search"></a></td>
-			<td valign="bottom" style="text-align:left; padding: 0px 0px 4px; width:200px;"><a href="#" class="type_scr"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/box_off_white.gif' border='0'  class="tabu_box"></a> <?php print _t("Tagesberichte"); ?></div>
+			<td valign="bottom" style="text-align:left; padding: 0px 0px 4px; width:200px;"><a href="#" class="type_scr"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/box_off_white.gif' border='0'  class="tabu_box"></a> <?php print _t("Script Clerk's reports"); ?></div>
 		</tr>
 		<tr>
 			<td valign="bottom" style="text-align:left; padding: 10px 0px 0px;"><a href="#" class="type_all"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/type_all_search.gif' border='0' class="tabu_search"></a></td>
-			<td valign="bottom" style="text-align:left; padding: 0px 0px 4px; width:200px;"><a href="#" class="type_all"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/box_off_white.gif' border='0'  class="tabu_box"></a> <?php print _t("alle"); ?></div>
+			<td valign="bottom" style="text-align:left; padding: 0px 0px 4px; width:200px;"><a href="#" class="type_all"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/box_off_white.gif' border='0'  class="tabu_box"></a> <?php print _t("all"); ?></div>
 		</tr>
 		<tr>
-			<td colspan="2" valign="bottom" style="text-align:left; padding: 30px 0px 0px 0px;"><div class="buttonBg"><a href="#" onclick="jQuery('#caAdvancedSearch').submit(); return false;"><?php print _t("Suche"); ?></a></div></td>
+			<td colspan="2" valign="bottom" style="text-align:left; padding: 30px 0px 0px 0px;"><div class="buttonBg"><a href="#" onclick="jQuery('#caAdvancedSearch').submit(); return false;"><?php print _t("Search"); ?></a></div></td>
 		</tr>
 	</table><!-- end typeList -->
 	<div id="advSearchLeft">
@@ -98,7 +98,7 @@
 ?>
 		<div class="advSearchElement">
 			<div class="advSearchLabelBg"><div class="advSearchLabel"><?php print $va_bundle_info['label']; ?></div></div>
-			<?php print $t_subject->htmlFormElementForSearch($this->request, $vs_bundle,array_merge($va_bundle_info,$va_bundle_opts)); ?>
+			<?php print $t_subject->htmlFormElementForSearch($this->request, $vs_bundle, array_merge($va_bundle_info, $va_bundle_opts)); ?>
 		</div><!-- end advSearchElement -->
 <?php
 	}
@@ -140,7 +140,7 @@
 			tabuClearTypes();
 			jQuery('.type_all .tabu_box').attr('src', '<?php print $this->request->getThemeUrlPath(); ?>/graphics/box_on_red.gif');
 			jQuery('.type_all .tabu_search').attr('src', '<?php print $this->request->getThemeUrlPath(); ?>/graphics/type_all_search_on.gif');
-			jQuery('#tabu_type_id').val('');
+			jQuery('#tabu_type_id').val("*");
 			return false;
 		});
 <?php
@@ -169,4 +169,6 @@
 		jQuery('.type_scr .tabu_search').attr('src', '<?php print $this->request->getThemeUrlPath(); ?>/graphics/type_script_search.gif');
 		jQuery('.type_all .tabu_search').attr('src', '<?php print $this->request->getThemeUrlPath(); ?>/graphics/type_all_search.gif');
 	}
+	
+	//jQuery('#ca_objects_date_translated').daterangepicker({presets: { dateRange: '<?php print _t("Choose")." ..."; ?>'}, earliestDate: new Date(1920,2,1), latestDate: new Date(1930,11,31), 'rangeStartTitle': '<?php print _t("Begin"); ?>', 'rangeEndTitle': '<?php print _t("End");?>', 'doneButtonText': '<?php print _t("Done");?>', 'dateFormat': 'dd/mm/yy'});
 </script>

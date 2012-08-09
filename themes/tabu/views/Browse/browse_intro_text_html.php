@@ -1,3 +1,3 @@
 <div class="browseIntroText">
-<?php print _t("Suche starten mit"); ?>
+<?php print _t("Start search with"); ?>
 </div>

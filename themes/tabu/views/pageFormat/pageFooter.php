@@ -1,5 +1,5 @@
 	<div style="clear:both; height:1px;"><!-- empty --></div>
-	<div id="topLink"><a href="#top">&raquo; <?php print _t("nach oben"); ?></a></div></div><!-- end contentArea --></div><!-- end pageArea -->
+	<div id="topLink"><a href="#top">&raquo; <?php print _t("Top of page"); ?></a></div></div><!-- end contentArea --></div><!-- end pageArea -->
 <?php
 print TooltipManager::getLoadHTML();
 ?>

@@ -3,11 +3,11 @@
 ?>
  		<div id="breadcrumbTrail">
 <?php
-		print caNavLink($this->request, "&gt; "._t("Anmelden/Registrieren"), '', '', 'LoginReg', 'form');
+		print caNavLink($this->request, "&gt; "._t("Register / Log in"), '', '', 'LoginReg', 'form');
 ?>
 		</div><!-- end breadcrumbTrail -->
 			<div id="loginForm">
-				<h1><?php print _t("Login"); ?></h1>
+				<h1><?php print _t("Log in"); ?></h1>
 <?php
 				if($this->getVar("loginMessage")){
 					print "<div class='formErrors'>".$this->getVar("loginMessage")."</div>";
@@ -23,7 +23,7 @@
 						<b><?php print _t("Password"); ?></b><br/>
 						<input type="password" name="password" />
 					</div>
-					<div class="button"><a href="#" name="login" class="button" onclick="document.forms.login.submit(); return false;"><?php print _t("Login"); ?></a></div>
+					<div class="button"><a href="#" name="login" class="button" onclick="document.forms.login.submit(); return false;"><?php print _t("Log in"); ?></a></div>
 					
 					
 				</form>
@@ -57,7 +57,7 @@
 				<form action="<?php print caNavUrl($this->request, '', 'LoginReg', 'register', array()); ?>" method="post" name="registration">
 				<p>
 <?php
-					print _t("As a member you can bookmark items for reference during future site visits.");
+					print _t("If you are logged in, you will be able to select and bookmark your results on a reference list.");
 ?>
 				</p>
 <?php
@@ -83,7 +83,7 @@
 					$vn_num2 = rand(1,10);
 					$vn_sum = $vn_num1 + $vn_num2;
 ?>
-					<div><b><?php print _t("Security Question (to prevent SPAMbots)"); ?></b><br/>
+					<div><b><?php print _t("Please answer the following question due to spam security"); ?></b><br/>
 						<span id="securityText"><?php print $vn_num1; ?> + <?php print $vn_num2; ?> = </span><input name="security" value="" id="security" type="text" size="3" />
 					</div>
 <?php
@@ -92,7 +92,7 @@
 					}
 					print $this->getVar("password");
 ?>
-					<div><b><?php print _t('Re-Type password'); ?></b><br/><input type="password" name="password2" size="60" /></div>
+					<div><b><?php print _t('Repeat password'); ?></b><br/><input type="password" name="password2" size="60" /></div>
 					<div class="button"><a href="#" name="register" class="button" onclick="document.forms.registration.submit(); return false;"><?php print _t("Register"); ?></a></div>
 		
 								

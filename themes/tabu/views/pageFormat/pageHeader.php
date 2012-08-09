@@ -24,24 +24,37 @@
 <body>
 		<a name="top"></a><div id="header">
 			<div id="logo">
-<?php
-			print caNavLink($this->request, "<img src='".$this->request->getThemeUrlPath()."/graphics/logo.gif' border='0'>", "", "", "", "");
-?>				
+				<a target="_blank" href="<?php
+						global $g_ui_locale;
+						if($g_ui_locale=="en_US"){
+							print "http://osiris22.pi-consult.de/view.php3?show=5200001970739";
+						} else {
+							print "http://osiris22.pi-consult.de/view.php3?show=5700001870720";
+						}
+					?>"><img src='<?php print $this->request->getThemeUrlPath()."/graphics/logo.gif"; ?>' border='0' /></a>
+				
 			</div>
 			<div id="headerwrapper">
 				<div id="headertopbar">
+					<a target="_blank" href="<?php
+						global $g_ui_locale;
+						if($g_ui_locale=="en_US"){
+							print "http://osiris22.pi-consult.de/view.php3?show=5200002170739";
+						} else {
+							print "http://osiris22.pi-consult.de/view.php3?show=5600005470726";
+						}
+					?>"><?php print _t("Imprint"); ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;
 <?php
 				if (!$this->request->config->get('dont_allow_registration_and_login')) {
 					if($this->request->isLoggedIn()){
-						print caNavLink($this->request, _t("Merkliste"), "", "", "Sets", "Index");
-						print "&nbsp;&nbsp;|&nbsp;&nbsp;".caNavLink($this->request, _t("Logout"), "", "", "LoginReg", "logout");
+						//print caNavLink($this->request, _t("Reference List"), "", "", "Sets", "Index");
+						print caNavLink($this->request, _t("Logout"), "", "", "LoginReg", "logout");
 					}else{
-						print caNavLink($this->request, _t("Login/Register"), "", "", "LoginReg", "form");
+						print caNavLink($this->request, _t("Register / Log in"), "", "", "LoginReg", "form");
 					}
 				}
 				
 				# Locale selection
-				global $g_ui_locale;
 				$vs_base_url = $this->request->getRequestUrl();
 				$vs_base_url = ((substr($vs_base_url, 0, 1) == '/') ? $vs_base_url : '/'.$vs_base_url);
 				$vs_base_url = str_replace("/lang/[A-Za-z_]+", "", $vs_base_url);
@@ -74,11 +87,17 @@
 ?>
 				</div><!-- end headertopbar -->
 				<div id="titlebar">
-					<?php print _t("Zur Entstehung von F. W. Murnaus TABU"); ?><br/>
-					<?php print _t("Edition der Outtakes"); ?>
+					<?php print _t("The Making of F. W. Murnau's TABU:"); ?><br/>
+					<?php print _t("The Outtakes Edition"); ?>
 				</div>
 				<form name="header_search" action="<?php print caNavUrl($this->request, '', 'Search', 'Index'); ?>" method="get"><div id="nav">
-					<a href="http://www.tabu.deutsche-kinemathek.de"><?php print _t("Zur Edition"); ?></a><span class='navDivide'>|</span>
+					<a target="_blank" href="<?php 
+						if($g_ui_locale=="en_US"){
+							print "http://osiris22.pi-consult.de/view.php3?show=5200002270731";
+						} else {
+							print "http://osiris22.pi-consult.de/view.php3?show=5600004770726";
+						}
+					?>"><?php print _t("About the Edition"); ?></a><span class='navDivide'>|</span>
 <?php
 					$va_nav_bar = array();
 					foreach($this->getVar('nav')->getHTMLMenuBarAsLinkArray() as $vs_k => $vs_link) {
@@ -86,7 +105,7 @@
 					}
 					print join("<span class='navDivide'>|</span>", $va_nav_bar);
 ?>
-					<span class='navDivide'>|</span><?php print _t("Freie Suche"); ?><input type="text" name="search" value="<?php print ($vs_search) ? $vs_search : ''; ?>" onclick='jQuery("#quickSearch").select();' id="quickSearch"  autocomplete="off" size="100"/><a href="#" name="searchButtonSubmit" onclick="document.forms.header_search.submit(); return false;" class="search"><?php print _t("Go"); ?></a>
+					<span class='navDivide'>|</span><?php print _t("Free Search"); ?><input type="text" name="search" value="<?php print ($vs_search) ? $vs_search : ''; ?>" onclick='jQuery("#quickSearch").select();' id="quickSearch"  autocomplete="off" size="100"/><a href="#" name="searchButtonSubmit" onclick="document.forms.header_search.submit(); return false;" class="search"><?php print _t("Start"); ?></a>
 				</div><!-- end nav --></form>
 			</div><!-- end headerwrapper -->
 		</div><!-- end header -->

@@ -6,7 +6,7 @@
 ?>
 	<div id='searchNav'>
 <?php		
-		print "<b>"._t("Ergebnisse pro Seite").":</b><br/>";
+		print "<b>"._t("Search results per page").":</b><br/>";
 		$va_items_per_page = $this->getVar("items_per_page");
 		$vs_current_items_per_page = $vo_result_context->getItemsPerPage();
 		if(is_array($va_items_per_page) && sizeof($va_items_per_page) > 0){
@@ -66,6 +66,11 @@
 			print '</div>';
 		}
 ?>
+	
+	<div id="tools">
+		<br />
+		<?php print caNavLink($this->request, "&gt;&gt; "._t("Reference List"), '', '', 'Sets', 'Index', array(), array("target" => "_blank", "style" => "color:#000000;"));?>
+	</div>
 	</div><!-- end searchNav -->
 	<div id="searchFound">
 <?php
@@ -79,6 +84,6 @@
 		if($vn_count_end > $vn_num_hits){
 			$vn_count_end = $vn_num_hits;
 		}
-		print _t("Suchergebnis %1 von %2 von %3", $vn_count_start, $vn_count_end, $vn_num_hits);
+		print _t("Search Result %1 to %2 of %3", $vn_count_start, $vn_count_end, $vn_num_hits);
 ?>
 	</div>

@@ -29,22 +29,25 @@
 	$vo_result 				= $this->getVar('result');
 	$vo_result_context 		= $this->getVar('result_context');
 	$vs_search = $vo_result_context->getSearchExpression();
-
+if (!$this->request->isAjax()) {
  ?>
  		<div id="breadcrumbTrail">
 <?php
-		print caNavLink($this->request, "&gt; "._t("Freie Suche"), '', '', 'Search', 'Index');
-		print caNavLink($this->request, "&gt; "._t("Ergebnisliste"), '', '', 'Search', 'Index');
+		print caNavLink($this->request, "&gt; "._t("Free Search"), '', '', 'Search', 'Index');
+		print caNavLink($this->request, "&gt; "._t("List of Results"), '', '', 'Search', 'Index');
 ?>
 		</div><!-- end breadcrumbTrail -->
+<?php
+}
+?>
  	<div id="resultBox">
 <?php
 	if($vo_result) {
 ?>
-		<h1><?php print ("Ergebnisliste"); ?></h1>
+		<h1><?php print _t("List of Results"); ?></h1>
 		<div id="searchedFor">
 <?php
-			print _t("Suche nach").": ".$vs_search;
+			print _t("Search for").": ".$vs_search;
 ?>
 		</div>
 <?php

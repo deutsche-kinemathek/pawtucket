@@ -62,7 +62,7 @@
 ?>
 	<div id="breadcrumbTrail">
 <?php
-	print caNavLink($this->request, "&gt; "._t("Themensuche"), '', '', 'Browse', 'clearCriteria');
+	print caNavLink($this->request, "&gt; "._t("Topic Search"), '', '', 'Browse', 'clearCriteria');
 	print "<a href='#'>&gt; ".unicode_ucfirst($va_facet_info['label_plural'])."</a>";
 ?>
 	</div><!-- end breadcrumbTrail -->
@@ -75,7 +75,7 @@
 		# ------------------------------------------------------------
 		case 'none':
 			$vn_col = 0;
-			if(sizeof($va_facet) > 10){
+			if(sizeof($va_facet) > 6){
 				$vn_col = 1;
 				$vn_numPerCol = ceil((sizeof($va_facet))/3);
 			}				
@@ -85,7 +85,7 @@
 				if($vn_col && $i_col == 0){
 					print "<div class='col'>";
 				}
-				print "<div>".caNavLink($this->request, strip_tags($va_item['label']), 'browseSelectPanelLink', $this->request->getModulePath(), $this->request->getController(), ((strlen($vm_modify_id)) ? 'modifyCriteria' : 'addCriteria'), array_merge(array('facet' => $vs_facet_name, 'id' => $va_item['id'], 'mod_id' => $vm_modify_id), $va_other_params))."</div>";
+				print "<div style='height:30px;'>".caNavLink($this->request, strip_tags($va_item['label']), 'browseSelectPanelLink', $this->request->getModulePath(), $this->request->getController(), ((strlen($vm_modify_id)) ? 'modifyCriteria' : 'addCriteria'), array_merge(array('facet' => $vs_facet_name, 'id' => $va_item['id'], 'mod_id' => $vm_modify_id), $va_other_params))."</div>";
 				$i++;
 				$i_col++;
 				if($vn_col && (($i_col == $vn_numPerCol) || ($i == sizeof($va_facet)))){

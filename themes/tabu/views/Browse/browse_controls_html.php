@@ -44,13 +44,13 @@
 	<div id="browse">
 		<div id="breadcrumbTrail">
 <?php
-		print caNavLink($this->request, "&gt; "._t("Themensuche"), '', '', 'Browse', 'clearCriteria');
+		print caNavLink($this->request, "&gt; "._t("Topic Search"), '', '', 'Browse', 'clearCriteria');
 		if (sizeof($va_criteria) > 0) {
-			print caNavLink($this->request, "&gt; "._t("Ergebnisliste"), '', '', 'Browse', '');
+			print caNavLink($this->request, "&gt; "._t("List of Results"), '', '', 'Browse', 'Index');
 		}
 ?>
 		</div><!-- end breadcrumbTrail -->
-	<h1><?php print _t('Themensuche'); ?></h1>
+	<h1><?php print _t('Topic Search'); ?></h1>
 	<div id="resultBox"> 
 <?php
 	}

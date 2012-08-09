@@ -80,7 +80,7 @@
 					break;
 					# --------------------
 				}
-				$va_related_objects_by_type[$va_info["item_type_id"]][] = caNavLink($this->request, $vs_icon."&gt; "._t("Einstellungs-Nr.")."<br/>".(($t_rel_object->get('ca_objects.einstellungs_nr')) ? $t_rel_object->get('ca_objects.einstellungs_nr') : $t_rel_object->get('ca_objects.idno')), '', 'Detail', 'Object', 'Show', array('object_id' => $va_info["object_id"]));
+				$va_related_objects_by_type[$va_info["item_type_id"]][] = caNavLink($this->request, $vs_icon."&gt; "._t("Take No.")."<br/>".(($t_rel_object->get('ca_objects.einstellungs_nr')) ? $t_rel_object->get('ca_objects.einstellungs_nr') : $t_rel_object->get('ca_objects.idno')), '', 'Detail', 'Object', 'Show', array('object_id' => $va_info["object_id"]));
 			}
 			# --- add the current object to the array
 			$vs_icon = "";
@@ -98,7 +98,7 @@
 				break;
 				# --------------------
 			}
-			$va_related_objects_by_type[$t_object->get("type_id")][] = $vs_icon."<span class='current'>&gt; "._t("Einstellungs-Nr.")."<br/>".(($t_object->get('ca_objects.einstellungs_nr')) ? $t_object->get('ca_objects.einstellungs_nr') : $t_object->get('ca_objects.idno'))."</span>";
+			$va_related_objects_by_type[$t_object->get("type_id")][] = $vs_icon."<span class='current'>&gt; "._t("Take No.")."<br/>".(($t_object->get('ca_objects.einstellungs_nr')) ? $t_object->get('ca_objects.einstellungs_nr') : $t_object->get('ca_objects.idno'))."</span>";
 			# --- output related links and current obj in order: take, script report, continuity report
 			if(is_array($va_related_objects_by_type[23]) && (sizeof($va_related_objects_by_type[23]) > 0)){
 				$vs_link = "";
@@ -129,13 +129,13 @@
 ?>
 	</div><div id="pageArea"><div id="contentArea">
 	<div id="tools">
-		<a href="#" onclick="window.print();return false;">&gt;&gt; <?php print _t("Drucken"); ?></a>
+		<a href="#" onclick="window.print();return false;">&gt;&gt; <?php print _t("Print"); ?></a>
 <?php
 		if (!$this->request->config->get('dont_allow_registration_and_login')) {
 			if($this->request->isLoggedIn()){
-				print caNavLink($this->request, "&gt;&gt; "._t("Lesezeichen setzen"), '', '', 'Sets', 'addItem', array('object_id' => $vn_object_id));
+				print caNavLink($this->request, "&gt;&gt; "._t("Save to Reference List"), '', '', 'Sets', 'addItem', array('object_id' => $vn_object_id), array("target" => "_blank"));
 			}else{
-				print caNavLink($this->request, "&gt;&gt; "._t("Anmelden/Registrieren um Lesezeichen zu setzen"), '', '', 'LoginReg', 'form', array('site_last_page' => 'Sets', 'object_id' => $vn_object_id));
+				print caNavLink($this->request, "&gt;&gt; "._t("Register / Log in to save bookmark"), '', '', 'LoginReg', 'form', array('site_last_page' => 'Sets', 'object_id' => $vn_object_id));
 			}
 		}		
 ?>
@@ -144,25 +144,25 @@
 <?php
 	switch(ResultContext::getLastFind($this->request, 'ca_objects')){
 		case "basic_search":
-			print caNavLink($this->request, "&gt; "._t("Ergebnisliste"), '', '', 'Search', 'Index');
+			print caNavLink($this->request, "&gt; "._t("List of Results"), '', '', 'Search', 'Index');
 		break;
 		# -------------------------------------------------------
 		case "advanced_search":
-			print caNavLink($this->request, "&gt; "._t("Erweiterte Suche"), '', '', 'AdvancedSearch', 'Index');
-			print caNavLink($this->request, "&gt; "._t("Ergebnisliste"), '', '', 'AdvancedSearch', 'Index');
+			print caNavLink($this->request, "&gt; "._t("Advanced Search"), '', '', 'AdvancedSearch', 'Index');
+			print caNavLink($this->request, "&gt; "._t("List of Results"), '', '', 'AdvancedSearch', 'Index');
 		break;
 		# -------------------------------------------------------
 		case "basic_browse":
-			print caNavLink($this->request, "&gt; "._t("Themensuche"), '', '', 'Browse', 'clearCriteria');
-			print caNavLink($this->request, "&gt; "._t("Ergebnisliste"), '', '', 'Browse', 'Index');
+			print caNavLink($this->request, "&gt; "._t("Topic Search"), '', '', 'Browse', 'clearCriteria');
+			print caNavLink($this->request, "&gt; "._t("List of Results"), '', '', 'Browse', 'Index');
 		break;
 		# -------------------------------------------------------
 	}
-	print "<a href='#'>&gt; ".(($t_object->get('ca_objects.einstellungs_nr')) ? (_t("Einstellungs-Nr.")." ".$t_object->get('ca_objects.einstellungs_nr')) : _t("untitled"))."</a>";
+	print "<a href='#'>&gt; ".(($t_object->get('ca_objects.einstellungs_nr')) ? (_t("Take No.")." ".$t_object->get('ca_objects.einstellungs_nr')) : _t("untitled"))."</a>";
 ?>
 	</div><!-- end breadcrumbTrail -->
 	<div id="detailBody">
-		<h1><?php print (($t_object->get('ca_objects.einstellungs_nr')) ? (_t("Einstellungs-Nr.")." ".$t_object->get('ca_objects.einstellungs_nr')) : _t("untitled")); ?></h1>
+		<h1><?php print (($t_object->get('ca_objects.einstellungs_nr')) ? (_t("Take No.")." ".$t_object->get('ca_objects.einstellungs_nr')) : _t("untitled")); ?></h1>
 		<div id="leftCol">
 <?php
 		if ($t_rep && $t_rep->getPrimaryKey()) {
@@ -177,21 +177,21 @@
 				$vn_height = $va_img_info["HEIGHT"];
 				$vn_top = $vn_height - 28;
 				$vn_left = ($vn_width + ((605 - $vn_width)/2) - 28);
-				print "<div id='zoom' style='left:".$vn_left."px; top:".$vn_top."px;'><a href='#' onclick='caMediaPanel.showPanel(\"".caNavUrl($this->request, 'Detail', 'Object', 'GetObjectMediaOverlay', array('object_id' => $t_object->get("object_id"), 'representation_id' => $t_rep->getPrimaryKey()))."\"); return false;' ><img src='".$this->request->getThemeUrlPath()."/graphics/zoom.gif' border='0'></a></div>";
-				print "<a href='#' onclick='caMediaPanel.showPanel(\"".caNavUrl($this->request, 'Detail', 'Object', 'GetObjectMediaOverlay', array('object_id' => $t_object->get("object_id"), 'representation_id' => $t_rep->getPrimaryKey()))."\"); return false;' >".$t_rep->getMediaTag('media', $vs_display_version, $this->getVar('primary_rep_display_options'))."</a>";
+				print "<div id='zoom' style='left:".$vn_left."px; top:".$vn_top."px;'><a href='#' onclick='caMediaPanel.showPanel(\"".caNavUrl($this->request, 'Detail', 'Object', 'GetRepresentationInfo', array('object_id' => $t_object->get("object_id"), 'representation_id' => $t_rep->getPrimaryKey()))."\"); return false;' ><img src='".$this->request->getThemeUrlPath()."/graphics/zoom.gif' border='0'></a></div>";
+				print "<a href='#' onclick='caMediaPanel.showPanel(\"".caNavUrl($this->request, 'Detail', 'Object', 'GetRepresentationInfo', array('object_id' => $t_object->get("object_id"), 'representation_id' => $t_rep->getPrimaryKey()))."\"); return false;' >".$t_rep->getMediaTag('media', $vs_display_version, $this->getVar('primary_rep_display_options'))."</a>";
 			}
 ?>
 				</div><!-- end objDetailImage -->
 <?php					$va_related_objects_by_type = array();
 					switch($t_object->get("type_id")){
 						case 21: // report
-							$vo_result = $vo_search->search("type_id:21",array("sort"=>"ca_objects.date_translated"));
+							$vo_result = $vo_search->search("type_id:21",array("sort"=>"ca_objects.idno_sort"));
 							break;
 						case 22: // continuity
-							$vo_result = $vo_search->search("type_id:22",array("sort"=>"ca_objects.einstellungs_nr"));
+							$vo_result = $vo_search->search("type_id:22",array("sort"=>"ca_objects.idno_sort"));
 							break;
 						case 23: // take
-							$vo_result = $vo_search->search("type_id:23",array("sort"=>"ca_objects.einstellungs_nr"));
+							$vo_result = $vo_search->search("type_id:23",array("sort"=>"ca_objects.idno_sort"));
 							break;
 						default:
 							break;
@@ -263,22 +263,12 @@
 ?>
 				</div><!-- end objDetailImageNav -->
 <?php	
-					}
-					if(in_array($t_object->get("type_id"),array(21,22))){
-						switch($t_object->get("type_id")){
-							case 21:
-								$vs_and = "(ca_objects.einstellungs_nr:\"' + jQuery('#jumpToEinstellungNr').val() + '\" OR ca_objects.date_translated:\"' + jQuery('#jumpToEinstellungNr').val() + '\")";
-								break;
-							case 22:
-								$vs_and = "(ca_objects.einstellungs_nr:\"' + jQuery('#jumpToEinstellungNr').val() + '\" OR ca_objects.page_number_on_paper:\"' + jQuery('#jumpToEinstellungNr').val() + '\")";
-							default:
-								break;
-						}
+					}					
 ?>
 <script type="text/javascript">
 	function doJump() {
 		jQuery.getJSON('<?php print caNavUrl($this->request, 'Detail', 'Object', 'jumpToDetail'); ?>', 
-		{search: 'ca_objects.type_id:<?php print $t_object->get("type_id"); ?> AND <?php print $vs_and; ?>'},
+		{search: 'ca_objects.type_id:<?php print $t_object->get("type_id"); ?> AND '+jQuery("#tabu_jumpto_field").val()+':"'+jQuery('#jumpToEinstellungNr').val()+'"'},
 		function(data, status, xhr) {
 			if (data && data.length > 0) {
 				document.location = '<?php print caNavUrl($this->request, 'Detail', 'Object', 'Show', array('object_id' => '')); ?>' + data[0];
@@ -287,11 +277,36 @@
 	}
 </script>
 				<div id="objDetailImageJumpTo">
-					<div id="jumpToLabel"><?php print _t("Zur Einstellungs-Nr."); ?></div><input type="text" id="jumpToEinstellungNr"><a href='#' onclick='doJump(); return false;'><img src="<?php print $this->request->getThemeUrlPath(); ?>/graphics/buttonJumpTo.gif" border="0"></a>
-				</div><!-- end objDetailImageJumpTo -->
+					<div id="jumpToLabel">
+<?php
+					if($t_object->get("type_id")==21){ // report
+?>
+						<select id="tabu_jumpto_field">
+							<option value="ca_objects.einstellungs_nr"><?php print _t("Jump to Take No."); ?>:</option>
+							<option value="ca_objects.date_translated"><?php print _t("Jump to Date"); ?>:</option>
+						</select>
+<?php						
+					} else if($t_object->get("type_id")==22){ // con
+?>
+						<select id="tabu_jumpto_field">
+							<option value="ca_objects.einstellungs_nr"><?php print _t("Jump to Take No."); ?>:</option>
+							<option value="ca_objects.sdk_number"><?php print _t("Jump to Page No."); ?>:</option>
+						</select>
+<?php
+					} else { // clip
+?>
+						<select id="tabu_jumpto_field">
+							<option value="ca_objects.einstellungs_nr"><?php print _t("Jump to Take No."); ?>:</option>
+						</select>
 <?php
 					}
 ?>
+					</div>
+					<input type="text" id="jumpToEinstellungNr">
+					<a href='#' onclick='doJump(); return false;'>
+						<img src="<?php print $this->request->getThemeUrlPath(); ?>/graphics/buttonJumpTo.gif" border="0">
+					</a>
+				</div><!-- end objDetailImageJumpTo -->
 				<div style="clear:both;"><!-- empty --></div>
 			</div><!-- end objDetailImageContainer -->
 <?php
@@ -321,7 +336,9 @@
 						if($va_displayOptions["convertLineBreaks"] == 1){
 							$va_options = array('convertLineBreaks' => true);
 						}
-						print "<div class='unit'><span class='textHeading'>".(($va_displayOptions["italicHeading"] == 1) ? "<i>" : "").$t_object->getAttributeLabel($vs_attribute_code).(($va_displayOptions["italicHeading"] == 1) ? "</i>" : "")."</span><br/>".$t_object->get("ca_objects.{$vs_attribute_code}", $va_options)."</div><!-- end unit -->";
+						print "<div class='unit'><span class='textHeading'>".(($va_displayOptions["italicHeading"] == 1) ? "<i>" : "").$t_object->getAttributeLabel($vs_attribute_code).(($va_displayOptions["italicHeading"] == 1) ? "</i>" : "")."</span><br/>".str_replace(array("<p>", "</p>"), array("", ""), preg_replace(array("!</p>[\t\n\r ]*<p>!i"), array("<br/><br/>"), $t_object->get("ca_objects.{$vs_attribute_code}", $va_options)))."</div><!-- end unit -->";
+						#print "<div class='unit'><span class='textHeading'>".(($va_displayOptions["italicHeading"] == 1) ? "<i>" : "").$t_object->getAttributeLabel($vs_attribute_code).(($va_displayOptions["italicHeading"] == 1) ? "</i>" : "")."</span><br/>".str_replace(array("<p>", "</p>"), array("", "<br/><br/>"), $t_object->get("ca_objects.{$vs_attribute_code}", $va_options))."</div><!-- end unit -->";
+					
 					}
 				}
 			}
@@ -425,8 +442,8 @@
 		</div><!-- end leftCol-->
 		<div id="rightCol">
 <?php
-			print "<div class='unit'><span class='textHeading'>".$t_object->getAttributeLabel("record_type")."</span><br/>".$t_object->get("ca_objects.record_type")."</div><!-- end unit -->";
-			print "<div class='unit'><span class='textHeading'>"._t("Datensatz-Nr.")."</span><br/>".$t_object->get("ca_objects.idno")."</div><!-- end unit -->";
+			print "<div class='unit'><span class='textHeading'>".$t_object->getAttributeLabel("record_type")."</span><br/>".$t_object->get("ca_objects.type_id",array("convertCodesToDisplayText" => true))."</div><!-- end unit -->";
+			print "<div class='unit'><span class='textHeading'>"._t("Data Record No.")."</span><br/>".$t_object->get("ca_objects.idno")."</div><!-- end unit -->";
 
 			# --- attributes for right column based on type
 			switch($t_object->get("ca_objects.type_id")){
@@ -449,7 +466,7 @@
 			if(is_array($va_attributes) && (sizeof($va_attributes) > 0)){
 				foreach($va_attributes as $vs_attribute_code => $va_displayOptions){
 					if($t_object->get("ca_objects.{$vs_attribute_code}")){
-						print "<div class='unit'><span class='textHeading'>".(($va_displayOptions["italicHeading"] == 1) ? "<i>" : "").$t_object->getAttributeLabel($vs_attribute_code).(($va_displayOptions["italicHeading"] == 1) ? "</i>" : "")."</span><br/>".$t_object->get("ca_objects.{$vs_attribute_code}")."</div><!-- end unit -->";
+						print "<div class='unit'><span class='textHeading'>".(($va_displayOptions["italicHeading"] == 1) ? "<i>" : "").$t_object->getAttributeLabel($vs_attribute_code).(($va_displayOptions["italicHeading"] == 1) ? "</i>" : "")."</span><br/>".str_replace(array("<p>", "</p>"), array("", ""), $t_object->get("ca_objects.{$vs_attribute_code}"))."</div><!-- end unit -->";
 					}
 				}
 			}
