@@ -192,7 +192,7 @@ a.caption:hover{
 	padding:9px 0px 8px 8px;
 }
 #leftBar #searchBox #searchForm input {
-	font-size:11px;
+	font-size:20px;
 	font-weight: normal;
 	padding: 0px 10px 0px 10px;
 	border: 0px;
@@ -203,7 +203,7 @@ a.caption:hover{
 	outline:none;
 }
 #leftBar #searchBox #searchForm input[type="text"] {
-	font-size:11px;
+	font-size:20px;
 	font-weight: normal;
 	padding: 0px 10px 2px 10px;
 	border: 0px;

@@ -20,6 +20,9 @@
 			jQuery('#quickSearch').searchlight('<?php print $this->request->getBaseUrlPath(); ?>/index.php/Search/lookup', {showIcons: false, searchDelay: 100, minimumCharacters: 3, limitPerCategory: 3});
 		});
 	</script>
+    <script>
+      _V_.options.flash.swf = "http://<?php print __CA_SITE_HOSTNAME__; ?>/js/videojs/video-js.swf"
+    </script> 
 </head>
 <body>
 		<div id="pageArea"><div id="pageAreaPadding">
@@ -92,15 +95,15 @@
 				</div><!-- end browse Box -->
 				<div class="browseBox">
 					<div class="boxHeading">
-						<?php print caNavLink($this->request, "Tatort Fernsehen", '', '', 'Search', 'Index', array('search' => '"Polizeiruf" OR "Tatort"')); ?>
+						<?php print caNavLink($this->request, "Tatort Fernsehen", '', '', 'Search', 'Index', array('search' => 'Polizeiruf OR Tatort')); ?>
 					</div><!-- end browseHeading -->
 					<div>
-						<?php print caNavLink($this->request, "<img src='".$this->request->getThemeUrlPath()."/graphics/fernsehen/programmgalerie-krimi.jpg' width='255' height='112' border='0' id='logo'>", '', '', 'Search', 'Index', array('search' => '"Polizeiruf" OR "Tatort"')); ?>
+						<?php print caNavLink($this->request, "<img src='".$this->request->getThemeUrlPath()."/graphics/fernsehen/programmgalerie-krimi.jpg' width='255' height='112' border='0' id='logo'>", '', '', 'Search', 'Index', array('search' => 'Polizeiruf OR Tatort')); ?>
 					</div>
 				</div><!-- end browse Box -->
 <?php
 
-				$vs_fernsehgroessen_query = '"Georg Stefan Troller" OR "Vicco von Bülow"';
+				$vs_fernsehgroessen_query = "ca_entities:Troller OR ca_entities:Bülow";
 
 ?>
 				<div class="browseBox">
