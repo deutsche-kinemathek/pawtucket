@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<?php print $this->request->getThemeUrlPath(true); ?>/css/iestyles.css" />
 	<![endif]-->
 <?php
+	JavascriptLoadManager::register("browsable");
 	print JavascriptLoadManager::getLoadHTML($this->request->getBaseUrlPath());
 ?>
 	<script type="text/javascript">
