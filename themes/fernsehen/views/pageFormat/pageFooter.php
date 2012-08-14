@@ -6,7 +6,7 @@ if (!$this->request->isAjax()) {
 <?php
 			print caNavLink($this->request, "Info", "", "", "About", "index", array(), array("style" => "float:left; width:200px; text-align:left;"));
 			print caNavLink($this->request, "Impressum", "", "", "About", "impressum", array(), array("style" => "float:right; width:200px; text-align:right;"));
-			print caNavLink($this->request, "Hilfe", "", "", "About", "hilfe");
+			print caNavLink($this->request, "Home", "title", "", "", "");
 ?>
 		</div><!-- end footer -->
 	</div><!-- end pageArea -->

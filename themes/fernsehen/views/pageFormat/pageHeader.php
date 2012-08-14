@@ -29,7 +29,7 @@
 		<div id="pageArea"><div id="pageAreaPadding">
 			<div id="header">
 <?php
-				print "<img src='".$this->request->getThemeUrlPath()."/graphics/fernsehen/sdk_logo.png' width='91' height='128' border='0' id='logo'>";
+				caNavLink($this->request, "<img src='".$this->request->getThemeUrlPath()."/graphics/fernsehen/sdk_logo.png' width='91' height='128' border='0' id='logo'>", "title", "", "", "");
 				print "<div id='title'>".caNavLink($this->request, "Programmgalerie Fernsehen", "title", "", "", "")."</div>";
 ?>				
 			</div><!-- end header -->
