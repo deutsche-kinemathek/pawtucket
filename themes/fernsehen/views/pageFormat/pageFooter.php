@@ -4,9 +4,9 @@ if (!$this->request->isAjax()) {
 		</div><!-- end contentArea --><div style="clear:both;"><!-- empty --></div></div><!-- end pageAreaPadding -->
 		<div id="footer">
 <?php
-			print caNavLink($this->request, "Info", "", "", "About", "index", array(), array("style" => "float:left; width:200px; text-align:left;"));
-			print caNavLink($this->request, "Impressum", "", "", "About", "impressum", array(), array("style" => "float:right; width:200px; text-align:right;"));
-			print caNavLink($this->request, "Home", "title", "", "", "");
+			print caNavLink($this->request, "Info", "", "", "About", "index", array(), array("style" => "float:left; text-align:left;"));
+			print caNavLink($this->request, "Impressum", "", "", "About", "impressum", array(), array("style" => "float:right; text-align:right;"));
+			print caNavLink($this->request, "Home", "", "", "", "");
 ?>
 		</div><!-- end footer -->
 	</div><!-- end pageArea -->
