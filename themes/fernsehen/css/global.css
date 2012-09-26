@@ -4,7 +4,7 @@ form{
 
 body {
 	font-family: Arial, sans-serif;
-	font-size:12px;
+	font-size:13px;
 	color: #000000;
 	background-color:#7a7a7a;
 	margin: 0px;
@@ -483,7 +483,7 @@ div.searchlight-results div.searchlight-selected {
 	margin:0px 0px 20px 0px;
 	text-align:left;
 	padding:5px 20px 0px 0px;
-	font-size:18px;
+	font-size:24px;
 	color: #7a7a7a;
 	font-weight:bold;
 }

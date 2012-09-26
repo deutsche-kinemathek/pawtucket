@@ -90,6 +90,11 @@
 			<h1><?php print $vs_title; ?></h1>
 			<div id="EntityInfo">
 <?php
+		    if($vs_year = getAttributeFromAVWork($t_object,"production_year")){
+?>
+		    	<div class="unit">Produktionsjahr:&nbsp;&nbsp;&nbsp;<?php print $vs_year; ?></div>
+<?php
+		    }
 			# --- list items
 			$vs_list_items = $t_object->get("ca_list_items.preferred_labels.name_singular",array("delimiter" => ", "));
 
