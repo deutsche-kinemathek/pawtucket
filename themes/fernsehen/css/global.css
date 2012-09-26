@@ -468,7 +468,7 @@ div.searchlight-results div.searchlight-selected {
 #detailBody #leftCol{
 	float:left;
 	width: 600px;
-	font-size: 18px;
+	font-size: 19px;
 	text-align:left;
 	color: #bfbfbf;
 	margin:20px 0px 20px 20px;
@@ -499,12 +499,13 @@ div.searchlight-results div.searchlight-selected {
 #detailBody #rightCol{
 	width:602px;
 	text-align:left;
-	float:right
+	float:right;
+	font-size: 19px;
 }
 #detailBody #rightCol #objDetailImage{
 }
 #detailBody #rightCol #info{
-	font-size: 18px;
+	font-size: 19px;
 	text-align:left;
 	color: #bfbfbf;
 	margin:20px 20px 20px 0px;
