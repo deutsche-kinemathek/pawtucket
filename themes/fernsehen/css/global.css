@@ -512,7 +512,7 @@ div.searchlight-results div.searchlight-selected {
 	line-height:1.5em;
 }
 #detailBody #rightCol #info #EntityInfo{
-	height:300px;
+	height:250px;
 	overflow-y:auto;
 }
 #detailBody #rightCol #info div, #detailBody #rightCol #info p {
