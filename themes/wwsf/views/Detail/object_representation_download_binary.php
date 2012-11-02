@@ -36,6 +36,11 @@
 	header("Cache-control: private");
 	
 	header("Content-Disposition: attachment; filename=".$this->getVar('version_download_name'));
-	
-	readfile($vs_file_path);
+
+	ob_end_flush();
+
+	$vr_fp = fopen($vs_file_path, "r");
+	while(!feof($vr_fp)) {
+		echo fread($vr_fp, 8192);
+	}
 ?>
