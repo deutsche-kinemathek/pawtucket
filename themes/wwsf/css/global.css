@@ -2104,3 +2104,15 @@ div.imageContainer {
 	height: 160px;
 	text-align: center;
 }
+
+#stickyContent {
+	position:absolute;
+	right: 0;
+	top: 105px;
+	width: 250px;
+	padding: 0 30px 20px 15px;
+	font-size: small;
+	color: #FFFFFF;
+	background: #92A4AE;
+}
+
