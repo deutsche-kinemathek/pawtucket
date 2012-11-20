@@ -1,3 +1,5 @@
+<?php global $g_ui_locale; ?>
+
 		<div id="splashBrowsePanel" class="browseSelectPanel" style="z-index:1000;">
 			<a href="#" onclick="caUIBrowsePanel.hideBrowsePanel()" class="browseSelectPanelButton"></a>
 			<div id="splashBrowsePanelContent">
@@ -51,6 +53,8 @@
 	$va_set_first_items = $t_set->getFirstItemsFromSets(array($vn_disp_set_id), array("version" => "thumbnail", "checkAccess" => $va_access_values));
 	
 	$va_random_memory = array_pop($va_set_first_items[$vn_disp_set_id]);
+
+	if($g_ui_locale == "en_US"){
 ?>
 			<div class="quickLinkItem">
 				<div class="title"><?php print _t("Exhibition Themes"); ?></div>
@@ -64,8 +68,34 @@
 				<div class="title"><?php print _t("Memories"); ?></div>
 				<table cellpadding="0" cellspacing="0"><tr><td valign="middle" align="center"><?php print caNavLink($this->request, $va_random_memory['representation_tag'], '', 'Detail', 'Object', 'Index', array('set_id' => $va_random_memory['set_id'], 'object_id' => $va_random_memory['object_id'])); ?></td></tr></table>
 			</div>
+<?php
+	} else {
+			// get WWSFU pic
+			$t_set = new ca_sets(408);
+			$va_set_items = caExtractValuesByUserLocale($t_set->getItems(array("thumbnailVersion" => "thumbnail", 'checkAccess' => caGetUserAccessValues($this->request))));
+			foreach($va_set_items as $va_set_item){
+				$vs_wwsfu = $va_set_item["representation_tag"];
+				break;
+			}
+?>
+			<div class="quickLinkItem">
+				<div class="title"><?php print _t("Memories"); ?></div>
+				<table cellpadding="0" cellspacing="0"><tr><td valign="middle" align="center"><?php print caNavLink($this->request, $va_random_memory['representation_tag'], '', 'Detail', 'Object', 'Index', array('set_id' => $va_random_memory['set_id'], 'object_id' => $va_random_memory['object_id'])); ?></td></tr></table>
+			</div>
+			<div class="quickLinkItem">
+				<div class="title"><?php print ($this->getVar("user_favorites_is_random")) ? _t("Random selection") : _t("User favorites"); ?></div>
+				<table cellpadding="0" cellspacing="0"><tr><td valign="middle" align="center"><?php print caNavLink($this->request, (($this->getVar("user_favorites_is_random")) ? $this->getVar("random_object_thumb") : $this->getVar("user_favorites_thumb")), '', 'Detail', 'Object', 'Index', array('object_id' => (($this->getVar("user_favorites_is_random")) ? $this->getVar('random_object_id') : $this->getVar('user_favorites_id')))); ?></td></tr></table>
+			</div>
+			<div class="quickLinkItem">
+				<div class="title">WWSF im Unterricht</div>
+				<table cellpadding="0" cellspacing="0"><tr><td valign="middle" align="center"><a href="http://www.unterricht.wir-waren-so-frei.de/" target="_blank"><?php print $vs_wwsfu; ?></a></td></tr></table>
+			</div>
+<?php
+	}
+?>
 			
 
 		</div><!-- end quickLinkItems -->
 			
 		<div class="hpRss"><?php print caNavLink($this->request, '<img src="'.$this->request->getThemeUrlPath(true).'/graphics/feed.gif" border="0" alt="'._t('Get alerted to newly added items by RSS').'" width="14" height="14"/> '._t('Get alerted to newly added items by RSS'), 'caption', '', 'Feed', 'recentlyAdded'); ?></div>
+

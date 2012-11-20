@@ -60,7 +60,7 @@
 		$t_set = new ca_sets($pn_set_id);
 		$vs_set_intro_text = $t_set->get('ca_sets.set_intro', array('convertLineBreaks' => true));
 		$vs_set_name = $t_set->get("ca_sets.preferred_labels");
-		$va_set_item_ids = array_keys($t_set->getItems(array("returnRowIdsOnly" => 1)));
+		$va_set_item_ids = array_keys($t_set->getItems(array("checkAccess" => array(1), "returnRowIdsOnly" => 1)));
 		if($t_set->get("type_id") == $vn_set_type_memory){
 			# --- this is a mempry set - display heading above set text beneath image
 			$vn_memory_set = 1;

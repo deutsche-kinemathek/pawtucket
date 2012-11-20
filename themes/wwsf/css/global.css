@@ -2114,5 +2114,6 @@ div.imageContainer {
 	font-size: small;
 	color: #FFFFFF;
 	background: #92A4AE;
+	z-index: 1000;
 }
 

@@ -118,8 +118,8 @@
  					print "</div></div>";
 ?>
 					<script type="text/javascript">
-					$(document).ready(function() {
-						$('#slideShow').cycle({
+					jQuery(document).ready(function() {
+						jQuery('#slideShow').cycle({
 							fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 							speed:  1000,
 							timeout: 2000

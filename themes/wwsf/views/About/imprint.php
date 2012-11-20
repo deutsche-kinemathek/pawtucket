@@ -52,10 +52,10 @@
 				
 				<br/><br/>The internet presentation is an independent part of the overall project "Wir waren so frei... Momentaufnahmen 1989/1990" (Project management: Ulrike Schmiegelt). The web presentation refers to the documents acquired within the project and was developed in close cooperation with the bpb (The Federal Agency for Civic Education) and Whirl-i-Gig (New York). 
 
-				<br/><br/><b>Internet archive (project management)</b>
+				<br/><br/><b>Project lead internet archive</b>
 				<br/>Jürgen Keiper
 
-				<br/><br/><b>Cataloguing and Indexing (concept and coordination)</b>
+				<br/><br/><b>Project management</b>
 				<br/>Christiane Grün 
 
 				<br/><br/><b>Additional research</b>
@@ -157,10 +157,10 @@
 				
 				<br/><br/>Das Internet-Archiv ist ein eigenständiger Bereich des Gesamtprojektes "Wir waren so frei ... Momentaufnahmen 1989/1990". Der Webauftritt versammelt fast alle Dokumente, die im Rahmen des Projektes zusammengetragen wurden, und wird permanent mit neuen Fotos und Filmen aktualisiert. Die Konzeption geschah in enger Zusammenarbeit mit der bpb (Bundeszentrale für politische Bildung) und Whirl-i-Gig (New York). 
 
-				<br/><br/><b>Internet-Archiv (Projektmanagement)</b>
+				<br/><br/><b>Projektleitung Internet-Archiv</b>
 				<br/>Jürgen Keiper
 
-				<br/><br/><b>Katalogisierung und Indexierung (Konzept und Koordination)</b>
+				<br/><br/><b>Projektmanagement</b>
 				<br/>Christiane Grün 
 
 				<br/><br/><b>Zusatzrecherche</b>

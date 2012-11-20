@@ -32,7 +32,7 @@
 				</div><!-- end DKText-->
 				<br/><br/>
 				
-				<div style="float:left; margin: 10px 20px 10px 0px;"><a href="http://www.bpb.de" target="_blank"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/bpb.png' width='180' height='56' border='0'></a></div>
+				<div style="float:left; margin: 10px 20px 10px 0px;"><a href="http://www.bpb.de" target="_blank"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/bpb.png' width='180' height='75' border='0'></a></div>
 				<h2><a href="http://www.bpb.de" target="_blank">The Federal Agency for Civic Education</a></h2>
 
 				The work done by the Federal Agency for Civic Education (Bundeszentrale für politische Bildung/bpb) centres on promoting awareness for democracy and participation in politics. It takes up topical and historical subjects by issuing publications, by organising seminars, events, study trips, exhibitions and competitions, by providing extension training for journalists and by offering films and on-line products. The broad range of educational activities provided by the bpb is designed to motivate people and enable them to give critical thought to political and social issues and play an active part in political life. Considering Germany's experience with various forms of dictatorial rule down through its history, the Federal Republic of Germany bears a unique responsibility for firmly anchoring values such as democracy, pluralism and tolerance in people's minds.
@@ -65,7 +65,7 @@
 				</div><!-- end DKText-->
 				<br/><br/>
 				
-				<div style="float:left; margin: 10px 20px 10px 0px;"><a href="http://www.bpb.de" target="_blank"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/bpb.png' width='180' height='56' border='0'></a></div>
+				<div style="float:left; margin: 10px 20px 10px 0px;"><a href="http://www.bpb.de" target="_blank"><img src='<?php print $this->request->getThemeUrlPath(); ?>/graphics/bpb.png' width='180' height='75' border='0'></a></div>
 				<h2><a href="http://www.bpb.de" target="_blank">Die Bundeszentrale für politische Bildung</a></h2>
 
 				Im Zentrum der Arbeit der Bundeszentrale für politische Bildung steht die Förderung des Bewusstseins für Demokratie und politische Partizipation. Aktuelle und historische Themen greift sie mit Veranstaltungen, Printprodukten, audiovisuellen und Online-Produkten auf. Veranstaltungsformate der bpb sind Tagungen, Kongresse, Festivals, Messen, Ausstellungen, Studienreisen, Wettbewerbe, Kinoseminare und Kulturveranstaltungen sowie Events und Journalistenweiterbildungen. Das breit gefächerte Bildungsangebot der bpb soll Bürgerinnen und Bürger motivieren und befähigen, sich kritisch mit politischen und gesellschaftlichen Fragen auseinander zu setzen und aktiv am politischen Leben teilzunehmen. Aus den Erfahrungen mit diktatorischen Herrschaftsformen in der deutschen Geschichte erwächst für die Bundesrepublik Deutschland die besondere Verantwortung, Werte wie Demokratie, Pluralismus und Toleranz im Bewusstsein der Bevölkerung zu festigen.
