@@ -75,7 +75,13 @@
 					</div><!-- end browse Box -->
 <?php					
 				}
+
 ?>
+				<div class="browseBox">
+					<div class="boxHeading">
+						<?php print caNavLink($this->request, "Sesamstrasse", '', '', 'Search', 'Index', array('search' => "ca_list_items:sesame_st")); ?>
+					</div>
+				</div>
 			</div><!-- end leftBar -->
 			<div id="rightBar">
 				<div class="browseBox">
