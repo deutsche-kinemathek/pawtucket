@@ -73,6 +73,7 @@
 			// get WWSFU pic
 			$t_set = new ca_sets(408);
 			$va_set_items = caExtractValuesByUserLocale($t_set->getItems(array("thumbnailVersion" => "thumbnail", 'checkAccess' => caGetUserAccessValues($this->request))));
+			shuffle($va_set_items);
 			foreach($va_set_items as $va_set_item){
 				$vs_wwsfu = $va_set_item["representation_tag"];
 				break;

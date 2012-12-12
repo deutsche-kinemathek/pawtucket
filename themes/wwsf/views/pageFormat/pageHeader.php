@@ -15,8 +15,6 @@
 <?php
 	print JavascriptLoadManager::getLoadHTML($this->request->getBaseUrlPath());
 ?>
-	<script src='<?php print $this->request->getThemeUrlPath(true); ?>/js/sidebar.js' type='text/javascript'></script>
-	<script src='<?php print $this->request->getThemeUrlPath(true); ?>/js/mootools.js' type='text/javascript'></script>
 	<script type="text/javascript">
 		 jQuery(document).ready(function() {
 			jQuery('#quickSearch').searchlight('<?php print $this->request->getBaseUrlPath(); ?>/index.php/Search/lookup', {showIcons: false, searchDelay: 100, minimumCharacters: 3, limitPerCategory: 3});
@@ -116,10 +114,6 @@
 		if($this->request->getController() != "Search"){
 ?>
 			<div id="pageArea">
-				<div id="stickyContent">
-					<p><strong>Liebe Nutzer</strong> 
-					<p><em>Helfen Sie uns das Internet-Archiv zu verbessern! Bitte nehmen Sie an unserer Evaluierung teil. Hier geht's zur <a href="https://de.surveymonkey.com/s/wirwarensofrei" target="_blank">Online-Umfrage</a></em></p>
-				</div>
 <?php
 		}
 }
