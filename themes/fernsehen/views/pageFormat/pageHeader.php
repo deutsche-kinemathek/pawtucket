@@ -85,7 +85,7 @@
 			<div class="browseBox">
                 <div class="boxHeading"><?php print "Suche nach"; ?></div><!-- end browseHeading -->
                 <div class="browseLink">
-                    <?php print caNavLink($this->request, "Martin Scorsese", '', '', 'Search', 'Index', array('search' => "term_id:3028")); ?>
+                    <?php print caNavLink($this->request, "Martin Scorsese", '', '', 'Search', 'Index', array('search' => "term_id:2944")); ?>
                 </div><!-- end browseLink -->
             </div><!-- end browse Box -->
 			</div><!-- end leftBar -->
