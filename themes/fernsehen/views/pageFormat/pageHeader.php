@@ -75,13 +75,19 @@
 					</div><!-- end browse Box -->
 <?php					
 				}
-
 ?>
-				<div class="browseBox">
-					<div class="boxHeading">
-						<?php print caNavLink($this->request, "Sesamstrasse", '', '', 'Search', 'Index', array('search' => "ca_list_items:sesame_st")); ?>
-					</div>
-				</div>
+            <div class="browseBox">
+				<div class="boxHeading"><?php print "Suche nach"; ?></div><!-- end browseHeading -->
+				<div class="browseLink">
+    				<?php print caNavLink($this->request, "Sesamstraße", '', '', 'Search', 'Index', array('search' => "term_id:859")); ?>
+				</div><!-- end browseLink -->
+			</div><!-- end browse Box -->
+			<div class="browseBox">
+                <div class="boxHeading"><?php print "Suche nach"; ?></div><!-- end browseHeading -->
+                <div class="browseLink">
+                    <?php print caNavLink($this->request, "Martin Scorsese", '', '', 'Search', 'Index', array('search' => "term_id:3028")); ?>
+                </div><!-- end browseLink -->
+            </div><!-- end browse Box -->
 			</div><!-- end leftBar -->
 			<div id="rightBar">
 				<div class="browseBox">
