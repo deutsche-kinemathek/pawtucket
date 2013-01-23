@@ -76,18 +76,15 @@
 <?php					
 				}
 ?>
-            <div class="browseBox">
+			<div class="browseBox">
 				<div class="boxHeading"><?php print "Suche nach"; ?></div><!-- end browseHeading -->
-				<div class="browseLink">
-    				<?php print caNavLink($this->request, "Sesamstraße", '', '', 'Search', 'Index', array('search' => "term_id:859")); ?>
-				</div><!-- end browseLink -->
+				<div class="browseLink"><?php print caNavLink($this->request, "Tipps zum 50.", '', '', 'Search', 'Index', array('search' => "term_id:2945")); ?></div>
 			</div><!-- end browse Box -->
 			<div class="browseBox">
-                <div class="boxHeading"><?php print "Suche nach"; ?></div><!-- end browseHeading -->
-                <div class="browseLink">
-                    <?php print caNavLink($this->request, "Martin Scorsese", '', '', 'Search', 'Index', array('search' => "term_id:2944")); ?>
-                </div><!-- end browseLink -->
-            </div><!-- end browse Box -->
+				<div class="boxHeading">Ausstellungen</div><!-- end browseHeading -->
+				<div class="ausstellungsLink"><?php print caNavLink($this->request, "Sesamstraße", '', '', 'Search', 'Index', array('search' => "term_id:859")); ?></div>
+				<div class="ausstellungsLink"><?php print caNavLink($this->request, "Martin Scorsese", '', '', 'Search', 'Index', array('search' => "term_id:2944")); ?></div>
+			</div><!-- end browse Box -->
 			</div><!-- end leftBar -->
 			<div id="rightBar">
 				<div class="browseBox">
